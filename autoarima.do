@@ -1,5 +1,6 @@
 capture program drop autoarima
 program define autoarima
+    // https://github.com/juanandres-montero/autoarima/blob/main/autoarima.do
     // Definir variables y argumentos
     args timevar var
 
