@@ -8,9 +8,9 @@ from pmdarima.arima import auto_arima
 # Leer los datos desde un archivo .dta
 # Ruta de acceso a la base de datos, cambiar aquí si se utiliza un archivo CSV o Excel
 # Por ejemplo, para CSV usa: pd.read_csv('ruta/a/archivo.csv')
-df_var = pd.read_stata('C:/Users/User/Downloads/cpi.dta')  # Cambiar 'ruta/a/cpi.dta' por la ruta real del archivo
+data = pd.read_stata('C:/Users/User/Downloads/cpi-entrenamiento.dta')  # Cambiar 'ruta/a/cpi.dta' por la ruta real del archivo
 
-y = df_var['cpi']  # Cambiar 'cpi' por el nombre de la columna que deseas modelar
+y = data['cpi']  # Cambiar 'cpi' por el nombre de la columna que deseas modelar
 
 # Ajustar el modelo ARIMA automáticamente
 model = auto_arima(y,

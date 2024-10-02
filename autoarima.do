@@ -13,9 +13,9 @@ program define autoarima
     tsset `timevar'
 
     // Configurar parámetros del modelo ARIMA
-    local maxp 4  // p hasta 4
+    local maxp 3  // p hasta 3
     local d `d'   // usar d especificado por el usuario
-    local maxq 4  // q hasta 4
+    local maxq 3  // q hasta 3
 
     // Inicializar matrices para AIC y BIC
     matrix results = J(`maxp' + 1, `maxq' + 1, .) // Matriz para almacenar AIC
@@ -117,8 +117,8 @@ program define autoarima
     // Mostrar los resultados mínimos para modelos sin constante
     di "El valor mínimo de AIC sin constante es " `min_aic_no_const' " en el modelo: ARIMA(`p_aic_no_const',`d',`q_aic_no_const')"
     di "El valor mínimo de BIC sin constante es " `min_bic_no_const' " en el modelo: ARIMA(`p_bic_no_const',`d',`q_bic_no_const')"
-	di "Compruebe que los coeficientes sean significativos"
-	di "Compruebe que todos los eigenvalores se ubiquen dentro del circulo unitario con estat aroots"
+	di "Compruebe que los coeficientes sean significativos."
+	di "Compruebe que todos los eigenvalores se ubiquen dentro del circulo unitario con estat aroots."
 
 end
 
